@@ -19,8 +19,8 @@ for arquivo in arquivos:
 
 
 # 2. Define o conjunto de letras
-letras = ['c', 'n', 'o', 'r', 's', 't', 'u']
-tamanho = 10
+letras = ['a', 'b', 'h', 'i', 'n', 's', 't']
+tamanho = 9
 
 # 3. Gera permutações
 for p in product(letras, repeat=tamanho):

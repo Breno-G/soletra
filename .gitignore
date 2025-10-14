@@ -1,0 +1,105 @@
+# ======================================
+# 🌐 GERAL
+# ======================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+
+# Ambiente
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+log.txt
+
+# ======================================
+# 📱 CLIENT (React Native / Expo)
+# ======================================
+client/node_modules/
+client/.expo/
+client/.expo-shared/
+client/web-build/
+client/dist/
+client/.vscode/
+client/.idea/
+client/android/
+client/ios/
+client/coverage/
+client/build/
+client/metro-cache/
+client/expo-build/
+
+# Expo files (cache e configs locais)
+client/.expo-packager-cache/
+client/.expo-settings.json
+client/.expo-dev-cache/
+client/.expo/*
+client/.expo-web/*
+client/expo-debug.log
+
+# ======================================
+# ⚙️ SERVER (Node.js + MongoDB)
+# ======================================
+server/node_modules/
+server/logs/
+server/coverage/
+server/temp/
+server/dist/
+server/.vscode/
+server/.idea/
+server/.env
+server/.DS_Store
+server/*.log
+server/utils/__pycache__/
+
+# ======================================
+# 🧠 DATABASE
+# ======================================
+*.db
+*.sqlite
+*.sqlite3
+dump.rdb
+data/
+mongo-data/
+
+# ======================================
+# ⚡ OUTROS
+# ======================================
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# Sistema operacional
+Desktop.ini
+ehthumbs.db
+
+# Build tools
+*.lock
+*.cache
+*.tmp
+
+# ======================================
+# ✅ PERSONALIZADO (se quiser excluir arquivos locais)
+# ======================================
+# Arquivos de teste e backups
+*.bak
+*.old
+*.orig
+*.swp
+
+# Arquivos do dicionário (opcional)
+server/palavras.txt
