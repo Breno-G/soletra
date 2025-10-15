@@ -7,7 +7,7 @@ export default function Header() {
     <View style={styles.container}>
       <MaskedView
         maskElement={
-          <Text style={[styles.text, { backgroundColor: "transparent" }]}>
+          <Text style={[styles.title, { backgroundColor: "transparent" }]}>
             Resolve Soletra
           </Text>
         }
@@ -20,6 +20,7 @@ export default function Header() {
           <Text style={[styles.text, { opacity: 0 }]}>Resolve Soletra</Text>
         </LinearGradient>
       </MaskedView>
+      <Text style={styles.subtext}>Encontre todas as palavras possíveis do jogo Soletra</Text>
     </View>
   );
 }
@@ -31,8 +32,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#E3F2FD",
   },
-  text: {
+  title: {
     fontSize: 40,
     fontWeight: "bold",
+    margin:8,
+    
   },
+  subtext:{
+    color:"#696969ff",
+    fontSize: "1.25rem",
+
+  }
 });

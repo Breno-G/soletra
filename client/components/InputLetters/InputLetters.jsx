@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { View, TextInput, TouchableOpacity, StyleSheet } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
-export default function LetrasInput() {
+
+export default function InputLetters() {
   const [letras, setLetras] = useState(Array(7).fill(""));
   const [obrigatoria, setObrigatoria] = useState(null);
   const [focado, setFocado] = useState(null);
+  const inputsRef = useRef([]);
 
   const handleChange = (text, index) => {
     const novas = [...letras];
     novas[index] = text.toUpperCase().slice(0, 1);
     setLetras(novas);
+    if (text && index < letras.length - 1) {
+      inputsRef.current[index + 1]?.focus();
+    }
   };
 
   return (
@@ -46,12 +51,13 @@ export default function LetrasInput() {
             )}
 
             <TextInput
+              ref={(el) => (inputsRef.current[index] = el)}
               style={[styles.input, { textAlign: "center" }]}
               value={letra}
               onChangeText={(t) => handleChange(t, index)}
               maxLength={1}
-              onFocus={() => setFocado(index)} // quando entra em foco
-              onBlur={() => setFocado(null)}   // quando perde foco
+              onFocus={() => setFocado(index)}
+              onBlur={() => setFocado(null)}
             />
           </View>
         );
@@ -66,7 +72,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     flexWrap: "wrap",
-    marginTop: 60,
   },
   box: {
     position: "relative",
@@ -86,7 +91,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "700",
     color: "#1E293B",
-    outlineStyle: "none", // remove borda de foco do navegador
+    outlineStyle: "none",
   },
   starCircle: {
     position: "absolute",
